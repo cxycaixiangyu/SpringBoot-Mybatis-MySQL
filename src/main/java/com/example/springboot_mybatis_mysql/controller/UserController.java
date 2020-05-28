@@ -6,15 +6,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @RestController
 @RequestMapping("/testBoot")
 public class UserController {
 
+    HttpServletRequest httpServletRequest;
+
     @Autowired
     private UserService userService;
 
 
+    //http://localhost:8080/testBoot/insertUser?id=1&username=zhangsan&password=123&realname=zs
     @RequestMapping("/insertUser")
     //为了方便代码编写，此处直接将要写入的数据写死，然后写到mysql中
     public String insertUser() {
