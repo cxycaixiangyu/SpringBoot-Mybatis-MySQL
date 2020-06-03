@@ -2,6 +2,8 @@ server:
   port: 8080
 
 spring:
+  thymeleaf:
+    cache: false
   datasource:
     username: root
     password: root
@@ -18,4 +20,4 @@ logging:
     com:
       example:
         mapper: debug
-        #目录com.example.mapper目录下的文件的日志级别debug,
+        #目录com.example.mapper目录下的文件的日志级别debug

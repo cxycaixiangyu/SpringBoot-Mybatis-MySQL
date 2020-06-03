@@ -2,12 +2,13 @@ package com.example.springboot_mybatis_mysql.controller;
 
 import com.example.springboot_mybatis_mysql.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController
+@Controller
 @RequestMapping("/testBoot1")
 public class UserController1 {
 
