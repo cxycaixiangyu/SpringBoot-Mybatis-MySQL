@@ -1,7 +1,7 @@
 /**
  * Created by Intellij IDEA.
- * @Author LUOLIANG
- * @Date 2016/8/2
+ * @Author CAIXIANGYU
+ * @Date 2020/06/03
  * @Comment js文件，用于页面发送ajax请求
  */
 
@@ -14,9 +14,10 @@ var viewmodel = avalon.define({
 
     request: function () {
         $.ajax({
-            type: "get",
-            url: "/test/getUser/1",    //向springboot请求数据的url
-            data: {},
+            type: "get",//请求的方式
+            url: "/test/getUser/1",    //向后台请求的数据库地址
+            //success为成功载入后的回调函数
+            //data为成功调用后的返回数据
             success: function (data) {
                 $('button').removeClass("btn-primary").addClass("btn-success").attr('disabled', true);
 
