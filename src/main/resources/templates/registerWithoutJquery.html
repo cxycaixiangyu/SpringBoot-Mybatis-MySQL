@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/jdbc">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script th:src="@{/js/jquery-2.1.1.min.js}"></script>
+<body>
+<p>
+    <input type="text" id="id" placeholder="请输入id"/>
+</p>
+<p>
+    <input type="text" id="username" placeholder="请输入用户名"/>
+</p>
+<p>
+    <input type="text" id="password" placeholder="请输入密码"/>
+</p>
+<p>
+    <input type="text" id="realname" placeholder="请输入用户名"/>
+</p>
+
+<input type="button" id="btn" value="点击提交">
+
+<script type="text/javascript">
+    var id = document.getElementById("id");
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    var realname = document.getElementById("realname");
+
+    document.getElementById('btn').onclick = function () {
+        alert("按钮绑定成功")
+        var idValue = id.value;
+        var usernameValue = username.value;
+        var passwordValue = password.value;
+        var realnameValue = realname.value;
+        alert("程序到这里了")
+        $.ajax({
+            type: 'get',
+            url: "http://localhost:8080/test/registerUser5",
+            data: {
+                id: idValue,
+                username: usernameValue,
+                password: passwordValue,
+                realname: realnameValue
+            },
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (xhr) {
+                console.log(xhr);
+            }
+        });
+    }
+</script>
+</body>
+</html>
